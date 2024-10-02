@@ -3,6 +3,7 @@ package com.digitalSupport.seasonalInformation.service;
 import com.digitalSupport.seasonalInformation.model.MasterSeasonalInfoForLogs;
 import com.digitalSupport.seasonalInformation.model.SeasonalEmailLog;
 import com.digitalSupport.seasonalInformation.repository.MasterSeasonalInfoForLogsRepository;
+import com.digitalSupport.seasonalInformation.repository.SeasonalEmailLogRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,11 +39,11 @@ public class SeasonalReminderService {
             String body = buildEmailBody(reminder);
 
             Set<String> toEmails = reminder.getRecipientsTo().stream()
-                    .map(MasterBusinessUser::getEmailId)
+                    .map((ele) -> ele.getEmailId())
                     .collect(Collectors.toSet());
 
             Set<String> ccEmails = reminder.getRecipientsCc().stream()
-                    .map(MasterBusinessUser::getEmailId)
+                    .map((ele) -> ele.getEmailId())
                     .collect(Collectors.toSet());
 
             boolean sendStatus = emailService.sendEmail(toEmails, ccEmails, subject, body);

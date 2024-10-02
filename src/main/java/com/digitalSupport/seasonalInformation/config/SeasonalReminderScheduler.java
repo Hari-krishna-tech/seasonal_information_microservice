@@ -1,5 +1,6 @@
 package com.digitalSupport.seasonalInformation.config;
 
+import com.digitalSupport.seasonalInformation.service.SeasonalReminderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

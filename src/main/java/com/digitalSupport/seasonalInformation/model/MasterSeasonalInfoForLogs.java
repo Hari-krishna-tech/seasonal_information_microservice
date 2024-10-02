@@ -16,7 +16,7 @@ public class MasterSeasonalInfoForLogs {
 
     @ManyToOne
     @JoinColumn(name = "origin", nullable = false)
-    private MasterSeasonalInfo origin;
+    private MasterOriginInfo origin;
 
     @Column(name = "region", nullable = false)
     private String region;
@@ -61,11 +61,11 @@ public class MasterSeasonalInfoForLogs {
         this.id = id;
     }
 
-    public MasterSeasonalInfo getOrigin() {
+    public MasterOriginInfo getOrigin() {
         return origin;
     }
 
-    public void setOrigin(MasterSeasonalInfo origin) {
+    public void setOrigin(MasterOriginInfo origin) {
         this.origin = origin;
     }
 
