@@ -3,7 +3,7 @@ package com.digitalSupport.seasonalInformation.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "master_")
+@Table(name = "master_business_users")
 public class MasterBusinessUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
