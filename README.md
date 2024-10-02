@@ -1,0 +1,1 @@
+# seasonal_information_mircroservice
