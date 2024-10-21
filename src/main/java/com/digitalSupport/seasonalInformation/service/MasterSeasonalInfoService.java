@@ -22,5 +22,9 @@ public class MasterSeasonalInfoService {
 
     }
 
+    public List<MasterSeasonalInfo> getSeasonalInfoByProduct(String product) {
+        return repository.findByProduct(product);
+    }
+
 
 }

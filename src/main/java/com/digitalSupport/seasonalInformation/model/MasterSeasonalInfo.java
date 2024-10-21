@@ -31,6 +31,9 @@ public class MasterSeasonalInfo {
     @Column(name = "reminder_date", nullable = false)
     private LocalDate reminderDate;
 
+    @Column(name = "product", nullable = false)
+    private String product;
+
     public MasterSeasonalInfo() {
     }
 
@@ -88,5 +91,13 @@ public class MasterSeasonalInfo {
 
     public void setReminderDate(LocalDate reminderDate) {
         this.reminderDate = reminderDate;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
     }
 }

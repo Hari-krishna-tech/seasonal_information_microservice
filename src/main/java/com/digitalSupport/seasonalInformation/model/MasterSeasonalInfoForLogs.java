@@ -34,6 +34,9 @@ public class MasterSeasonalInfoForLogs {
     @Column(name = "reminder_date", nullable = false)
     private LocalDate reminderDate;
 
+    @Column(name = "product", nullable = false)
+    private String product;
+
     @ManyToMany
     @JoinTable(
             name = "seasonal_email_recipients_to",
@@ -123,5 +126,13 @@ public class MasterSeasonalInfoForLogs {
 
     public void setRecipientsCc(Set<MasterBusinessUser> recipientsCc) {
         this.recipientsCc = recipientsCc;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
     }
 }

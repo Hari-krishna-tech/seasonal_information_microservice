@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -30,7 +31,7 @@ public class SeasonalReminderService {
     }
 
     @Transactional
-    public void processAndSendReminders() {
+    public void processAndSendReminders() throws IOException {
         LocalDate today = LocalDate.now();
         List<MasterSeasonalInfoForLogs> reminders = seasonalInfoRepository.findByReminderDate(today);
 
